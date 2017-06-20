@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+        </nav>
+        <%= image_tag("logo.png", alt: "", class: "cobranded-logo") %>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-3">Meet Up</h1>
+        <p class="lead">Simply check and send messages to friends.</p>
+        <p><a class="btn btn-lg btn-success" href="<%= new_user_path %>" role="button">Sign up today</a></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Simple Sign Up</h4>
+          <p>Single page with filling email and password</p>
+
+          <h4>Free Messsages</h4>
+          <p><a href="<%= new_user_path %>" role="button">Join MeetUp</a> and enjoy messages freely</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Make Friendship</h4>
+          <p>Easily add friends and make network</p>
+
+          <h4>Message everywhere</h4>
+          <p>Tell your friends your emotions, connect to them simply</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; MeetUp 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
