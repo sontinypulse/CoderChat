@@ -7,37 +7,41 @@
               <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign In</a>
+              <a class="nav-link" href="<%= users_sign_in_path %>">Sign In</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About Us</a>
             </li>
           </ul>
         </nav>
-        <%= image_tag("logo.png", alt: "", class: "cobranded-logo") %>
+        <img style="max-width:80px; max-height:80px; margin-top: -20px;"
+             src="/assets/logo.svg">
       </div>
 
       <div class="jumbotron">
-        <h1 class="display-3">Meet Up</h1>
+        <h1 class="display-3">MeetUp</h1>
         <p class="lead">Simply check and send messages to friends.</p>
         <p><a class="btn btn-lg btn-success" href="<%= new_user_path %>" role="button">Sign up today</a></p>
+        <p class="text--small align--center">
+    			Already a member? <a href="<%= users_sign_in_path %>" class="link">Sign in</a>.
+    		</p>
       </div>
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Simple Sign Up</h4>
-          <p>Single page with filling email and password</p>
+          <h5>Simple Sign Up</h5>
+          <p style="font-size: 12px;">Single page with filling email and password</p>
 
-          <h4>Free Messsages</h4>
-          <p><a href="<%= new_user_path %>" role="button">Join MeetUp</a> and enjoy messages freely</p>
+          <h5>Free Messsages</h5>
+          <p style="font-size: 12px;"><a href="<%= new_user_path %>" role="button">Join MeetUp</a> and enjoy messages freely</p>
         </div>
 
         <div class="col-lg-6">
-          <h4>Make Friendship</h4>
-          <p>Easily add friends and make network</p>
+          <h5>Make Friendship</h5>
+          <p style="font-size: 12px;">Easily add friends and make network</p>
 
-          <h4>Message everywhere</h4>
-          <p>Tell your friends your emotions, connect to them simply</p>
+          <h5>Message everywhere</h5>
+          <p style="font-size: 12px;">Tell your friends your emotions, connect to them simply</p>
         </div>
       </div>
 
@@ -45,4 +49,4 @@
         <p>&copy; MeetUp 2017</p>
       </footer>
 
-    </div> <!-- /container -->
+</div> <!-- /container -->

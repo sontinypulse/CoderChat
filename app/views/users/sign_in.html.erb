@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class = "container">
+  <%=  render 'layouts/navbar'  %>
+	<div class="wrapper">
+    <%= form_tag(users_authenticate_path, method: "post", class: "form-signin") do %>
+    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+    <hr class="colorgraph"><br>
+    <%= text_field_tag :email, params[:email], class: 'form-control',  placeholder: 'Email Address' %>
+    <%= password_field_tag :password, nil, class: 'form-control',  placeholder: 'Password' %>
+    <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>
+    <% end %>
+	</div>
+</div>

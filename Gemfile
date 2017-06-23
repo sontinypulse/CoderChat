@@ -60,3 +60,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
 # Gemfile to use has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'jquery-validation-rails'
+
+gem 'jquery-turbolinks'
