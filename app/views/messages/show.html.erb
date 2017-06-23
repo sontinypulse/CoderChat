@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag 'messages', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% content_for(:sidebar) do %>
+  <%= render :partial => 'layouts/sidebar' %>
+<% end %>
+<% content_for(:navbar) do %>
+  <%= render :partial => 'layouts/navbar' %>
+<% end %>
+
+<div class="col-md-7 col-md-offset-3 main">
+  <div class="content-container clearfix">
+      <div class="col-md-12">
+          <%= @message %>
+      </div>
+  </div>
+</div>

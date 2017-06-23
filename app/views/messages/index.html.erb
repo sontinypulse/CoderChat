@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag 'messages', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% content_for :header do %>
+  <%= javascript_include_tag 'messages' %>
+<% end %>
+<% content_for(:sidebar) do %>
+  <%= render :partial => 'layouts/sidebar' %>
+<% end %>
+<% content_for(:navbar) do %>
+  <%= render :partial => 'layouts/navbar' %>
+<% end %>
+
+<div class="col-md-7 col-md-offset-3 main">
+  <div class="content-container clearfix">
+      <div class="col-md-12">
+          <h1 class="content-title">Inbox</h1>
+
+          <input type="search" placeholder="Search Messages" class="form-control mail-search" />
+
+          <ul class="mail-list">
+            <% @messages.each do |message| %>
+              <li>
+                  <a href="<%=message_path(message.id)%>">
+                      <span class="mail-sender"><%= "#{message.sender}" %></span>
+                      <span>(Sent at: <%= message.created_at %>)</span>
+                      <span class="mail-subject"><%= message.subject %></span>
+                  </a>
+              </li>
+            <% end %>
+          </ul>
+      </div>
+  </div>
+</div>
