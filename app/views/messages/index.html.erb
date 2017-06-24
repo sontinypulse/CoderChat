@@ -1,32 +1,73 @@
 <%= stylesheet_link_tag 'messages', media: 'all', 'data-turbolinks-track': 'reload' %>
-<% content_for :header do %>
-  <%= javascript_include_tag 'messages' %>
-<% end %>
-<% content_for(:sidebar) do %>
-  <%= render :partial => 'layouts/sidebar' %>
-<% end %>
-<% content_for(:navbar) do %>
-  <%= render :partial => 'layouts/navbar' %>
-<% end %>
+<div class="mail-option">
+    <div class="chk-all">
+        <input type="checkbox" class="mail-checkbox mail-group-checkbox">
+        <div class="btn-group">
+            <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
+                All
+                <i class="fa fa-angle-down "></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#"> None</a></li>
+                <li><a href="#"> Read</a></li>
+                <li><a href="#"> Unread</a></li>
+            </ul>
+        </div>
+    </div>
 
-<div class="col-md-7 col-md-offset-3 main">
-  <div class="content-container clearfix">
-      <div class="col-md-12">
-          <h1 class="content-title">Inbox</h1>
+    <div class="btn-group">
+        <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
+            <i class=" fa fa-refresh"></i>
+        </a>
+    </div>
+    <div class="btn-group hidden-phone">
+        <a data-toggle="dropdown" href="#" class="btn mini blue" aria-expanded="false">
+            More
+            <i class="fa fa-angle-down "></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+            <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <a data-toggle="dropdown" href="#" class="btn mini blue">
+            Move to
+            <i class="fa fa-angle-down "></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+            <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+        </ul>
+    </div>
 
-          <input type="search" placeholder="Search Messages" class="form-control mail-search" />
-
-          <ul class="mail-list">
-            <% @messages.each do |message| %>
-              <li>
-                  <a href="<%=message_path(message.id)%>">
-                      <span class="mail-sender"><%= "#{message.sender}" %></span>
-                      <span>(Sent at: <%= message.created_at %>)</span>
-                      <span class="mail-subject"><%= message.subject %></span>
-                  </a>
-              </li>
-            <% end %>
-          </ul>
-      </div>
-  </div>
+    <ul class="unstyled inbox-pagination">
+        <li><!--span>1-50 of 234</span--></li>
+        <li>
+            <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+        </li>
+        <li>
+            <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+        </li>
+    </ul>
 </div>
+ <table class="table table-inbox table-hover">
+   <tbody>
+     <% @messages.each do |message| %>
+     <tr class="unread">
+         <td class="inbox-small-cells">
+             <input type="checkbox" class="mail-checkbox">
+         </td>
+         <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+         <td class="view-message  dont-show"><%= message.sender %></td>
+         <td class="view-message "><%= link_to message.subject, message_path(message.id)  %></td>
+         <td class="view-message  text-right"><%= message.created_at.strftime("%A %H:%M") %></td>
+     </tr>
+     <% end %>
+
+   </tbody>
+ </table>

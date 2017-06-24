@@ -11,14 +11,17 @@
 
   <body>
     <div class='container-fluid'>
-      <%= yield :navbar %>
       <%= flash_messages %>
 
-      <div class="row">
-        <%= yield :sidebar %>
+      <%if current_user %>
+        <% if 'friends'.eql?(controller.controller_name) %>
+          <%= render 'layouts/friends' %>
+        <% else %>
+          <%= render 'layouts/content' %>
+        <% end %>
+      <% else %>
         <%= yield %>
-      </div>
-
+      <% end %>
     </div>
   </body>
 </html>

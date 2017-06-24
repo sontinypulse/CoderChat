@@ -1,0 +1,120 @@
+<div class="row">
+  <%= stylesheet_link_tag 'messages', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <div class="container">
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+   <div class="mail-box">
+                    <aside class="sm-side">
+                        <div class="user-head">
+                            <a class="inbox-avatar" href="javascript:;">
+                                <img  width="64" hieght="60" src="<%= current_user.avatar %>">
+                            </a>
+                            <div class="user-name">
+                                <h5><a href="#"><%= "#{current_user.first_name} #{current_user.last_name}" %></a></h5>
+                                <span><a href="#"><%= current_user.email %></a></span>
+                            </div>
+                            <a class="mail-dropdown pull-right" href="javascript:;">
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="inbox-body">
+                            <a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-compose">
+                                Compose
+                            </a>
+                            <!-- Modal -->
+                            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button aria-hidden="true" data-dismiss="modal" class="close" type="button" tabindex="1">×</button>
+                                            <h4 class="modal-title">New Message</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <%= form_tag(messages_path, :method => "post", id: "new-message-form", :class => 'form-horizontal' ) do %>
+                                          <div class="form-group">
+                                              <label class="col-lg-2 control-label">To</label>
+                                              <div class="col-lg-10">
+                                                  <%= text_field_tag :email, params[:email], class: "form-control", tabindex: 2 %>
+                                              </div>
+                                          </div>
+                                          <!--
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Cc / Bcc</label>
+                                                <div class="col-lg-10">
+                                                    <input type="text" placeholder="" id="cc" class="form-control">
+                                                </div>
+                                            </div>
+                                        -->
+                                          <div class="form-group">
+                                              <label class="col-lg-2 control-label">Subject</label>
+                                              <div class="col-lg-10">
+                                                  <%= text_field_tag :subject, params[:subject], class: "form-control", tabindex: 3 %>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="col-lg-2 control-label">Message</label>
+                                              <div class="col-lg-10">
+                                                <%= text_area_tag :body, params[:body], rows: 10, cols: 30, class: "form-control", tabindex: 4 %>
+                                              </div>
+                                          </div>
+
+                                          <div class="form-group">
+                                              <div class="col-lg-offset-2 col-lg-10">
+                                                <!--
+                                                  <span class="btn green fileinput-button">
+                                                    <i class="fa fa-plus fa fa-white"></i>
+                                                    <span>Attachment</span>
+                                                    <input type="file" name="files[]" multiple="">
+                                                  </span>
+                                                -->
+                                                  <%= submit_tag "Send", class: "btn btn-send", tabindex: 5 %>
+                                              </div>
+                                          </div>
+
+                                          <% end %>
+
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                        </div>
+                        <ul class="inbox-nav inbox-divider">
+                            <li class="active">
+                                <a href="<%= messages_path %>"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right"><%= current_user.received_messages.count %></span></a>
+
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
+                            </li>
+                            <li>
+                                <a href="<%= friends_myfriends_path %>"><i class=" fa fa-external-link"></i> My Friends <span class="label label-info pull-right">1</span></a>
+                            </li>
+                        </ul>
+
+                        <div class="inbox-body text-center">
+                            <div class="btn-group">
+                                <a class="btn mini btn-primary" href="<%= friends_list_path %>">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <%= link_to 'Log Out', log_out_path, method: 'delete', class: 'nav-link'%>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="lg-side">
+                        <div class="inbox-head">
+                            <h3>Inbox</h3>
+                            <form action="#" class="pull-right position">
+                                <div class="input-append">
+                                    <input type="text" class="sr-input" placeholder="Search Messages">
+                                    <button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="inbox-body">
+                              <%= yield %>
+                        </div>
+                    </aside>
+                </div>
+  </div>
+</div>

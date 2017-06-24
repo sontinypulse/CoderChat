@@ -64,3 +64,5 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-validation-rails'
 
 gem 'jquery-turbolinks'
+
+gem 'faker', '~> 1.4', '>= 1.4.3'

@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   delete 'log_out' => 'users#log_out'
   resources :users
   root 'home#index'
+  get 'friends/list' => 'friends#list'
+  post 'friends/add' => 'friends#add'
+  post 'friends/accept' => 'friends#accept'
+  get 'friends/myfriends' => 'friends#my_friends'
 end
