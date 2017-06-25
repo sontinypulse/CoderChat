@@ -6,8 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Rails.application.config.assets.precompile += %w(home.scss users.scss users.js messages.scss messages.js)
-
 module CoderChat
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
