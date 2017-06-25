@@ -14,5 +14,6 @@ module CoderChat
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.assets.precompile += %w(home.scss users.scss users.js messages.scss messages.js)
   end
 end
