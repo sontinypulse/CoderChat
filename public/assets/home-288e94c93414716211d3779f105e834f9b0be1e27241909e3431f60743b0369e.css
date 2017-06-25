@@ -1,0 +1,98 @@
+/* Space out content a bit */
+/* line 3, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/* line 9, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.header,
+.marketing,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Custom page header */
+/* line 17, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+/* line 22, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+
+/* Custom page footer */
+/* line 29, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 48em) {
+  /* line 37, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+  .container {
+    max-width: 46rem;
+  }
+}
+/* line 41, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+
+/* Main marketing message and sign up button */
+/* line 46, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+}
+
+/* line 50, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.jumbotron .btn {
+  padding: .75rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Supporting marketing content */
+/* line 56, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.marketing {
+  margin: 3rem 0;
+}
+
+/* line 59, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+.marketing p + h4 {
+  margin-top: 1.5rem;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  /* line 66, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Space out the masthead */
+  /* line 73, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  /* line 77, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/home.scss */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

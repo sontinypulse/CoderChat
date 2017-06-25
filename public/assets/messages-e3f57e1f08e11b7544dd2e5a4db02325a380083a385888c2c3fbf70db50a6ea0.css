@@ -1,0 +1,523 @@
+/* line 1, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-box {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-box aside {
+  display: table-cell;
+  float: none;
+  height: 100%;
+  padding: 0;
+  vertical-align: top;
+}
+
+/* line 15, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-box .sm-side {
+  background: none repeat scroll 0 0 #e5e8ef;
+  border-radius: 4px 0 0 4px;
+  width: 25%;
+}
+
+/* line 20, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-box .lg-side {
+  background: none repeat scroll 0 0 #fff;
+  border-radius: 0 4px 4px 0;
+  width: 75%;
+}
+
+/* line 25, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-box .sm-side .user-head {
+  background: none repeat scroll 0 0 #00a8b3;
+  border-radius: 4px 0 0;
+  color: #fff;
+  min-height: 80px;
+  padding: 10px;
+}
+
+/* line 32, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.user-head .inbox-avatar {
+  float: left;
+  width: 65px;
+}
+
+/* line 36, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.user-head .inbox-avatar img {
+  border-radius: 4px;
+}
+
+/* line 39, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.user-head .user-name {
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+
+/* line 43, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.user-head .user-name h5 {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+/* line 49, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.user-head .user-name h5 a {
+  color: #fff;
+}
+
+/* line 52, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.user-head .user-name span a {
+  color: #87e2e7;
+  font-size: 12px;
+}
+
+/* line 56, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+a.mail-dropdown {
+  background: none repeat scroll 0 0 #80d3d9;
+  border-radius: 2px;
+  color: #01a7b3;
+  font-size: 10px;
+  margin-top: 20px;
+  padding: 3px 5px;
+}
+
+/* line 64, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-body {
+  padding: 20px;
+}
+
+/* line 67, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.btn-compose {
+  background: none repeat scroll 0 0 #ff6c60;
+  color: #fff;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* line 74, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.btn-compose:hover {
+  background: none repeat scroll 0 0 #f5675c;
+  color: #fff;
+}
+
+/* line 78, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-nav {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 84, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-divider {
+  border-bottom: 1px solid #d5d8df;
+}
+
+/* line 87, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-nav li {
+  display: inline-block;
+  line-height: 45px;
+  width: 100%;
+}
+
+/* line 92, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-nav li a {
+  color: #6a6a6a;
+  display: inline-block;
+  line-height: 45px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* line 99, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
+  background: none repeat scroll 0 0 #d5d7de;
+  color: #6a6a6a;
+}
+
+/* line 103, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-nav li a i {
+  color: #6a6a6a;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+/* line 108, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-nav li a span.label {
+  margin-top: 13px;
+}
+
+/* line 111, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.labels-info li h4 {
+  color: #5c5c5e;
+  font-size: 13px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+
+/* line 119, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.labels-info li {
+  margin: 0;
+}
+
+/* line 122, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.labels-info li a {
+  border-radius: 0;
+  color: #6a6a6a;
+}
+
+/* line 126, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.labels-info li a:hover, ul.labels-info li a:focus {
+  background: none repeat scroll 0 0 #d5d7de;
+  color: #6a6a6a;
+}
+
+/* line 130, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.labels-info li a i {
+  padding-right: 10px;
+}
+
+/* line 133, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.nav.nav-pills.nav-stacked.labels-info p {
+  color: #9d9f9e;
+  font-size: 11px;
+  margin-bottom: 0;
+  padding: 0 22px;
+}
+
+/* line 139, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-head {
+  background: none repeat scroll 0 0 #41cac0;
+  border-radius: 0 4px 0 0;
+  color: #fff;
+  min-height: 80px;
+  padding: 20px;
+}
+
+/* line 146, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-head h3 {
+  display: inline-block;
+  font-weight: 300;
+  margin: 0;
+  padding-top: 6px;
+}
+
+/* line 152, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-head .sr-input {
+  border: medium none;
+  border-radius: 4px 0 0 4px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #8a8a8a;
+  float: left;
+  height: 40px;
+  padding: 0 10px;
+}
+
+/* line 161, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-head .sr-btn {
+  background: none repeat scroll 0 0 #00a6b2;
+  border: medium none;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  height: 40px;
+  padding: 0 20px;
+}
+
+/* line 169, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.table-inbox {
+  border: 1px solid #d3d3d3;
+  margin-bottom: 0;
+}
+
+/* line 173, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.table-inbox tr td {
+  padding: 12px !important;
+}
+
+/* line 176, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.table-inbox tr td:hover {
+  cursor: pointer;
+}
+
+/* line 179, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.table-inbox tr td .fa-star.inbox-started, .table-inbox tr td .fa-star:hover {
+  color: #f78a09;
+}
+
+/* line 182, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.table-inbox tr td .fa-star {
+  color: #d5d5d5;
+}
+
+/* line 185, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.table-inbox tr.unread td {
+  background: none repeat scroll 0 0 #f7f7f7;
+  font-weight: 600;
+}
+
+/* line 189, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-pagination {
+  float: right;
+}
+
+/* line 192, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul.inbox-pagination li {
+  float: left;
+}
+
+/* line 195, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-option {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* line 200, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-option .chk-all, .mail-option .btn-group {
+  margin-right: 5px;
+}
+
+/* line 203, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-option .chk-all, .mail-option .btn-group a.btn {
+  background: none repeat scroll 0 0 #fcfcfc;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px !important;
+  color: #afafaf;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+/* line 211, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-pagination a.np-btn {
+  background: none repeat scroll 0 0 #fcfcfc;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px !important;
+  color: #afafaf;
+  display: inline-block;
+  padding: 5px 15px;
+}
+
+/* line 219, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-option .chk-all input[type="checkbox"] {
+  margin-top: 0;
+}
+
+/* line 222, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.mail-option .btn-group a.all {
+  border: medium none;
+  padding: 0;
+}
+
+/* line 226, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-pagination a.np-btn {
+  margin-left: 5px;
+}
+
+/* line 229, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-pagination li span {
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 7px;
+}
+
+/* line 234, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.fileinput-button {
+  background: none repeat scroll 0 0 #eeeeee;
+  border: 1px solid #e6e6e6;
+}
+
+/* line 238, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.inbox-body .modal .modal-body input, .inbox-body .modal .modal-body textarea {
+  border: 1px solid #e6e6e6;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 242, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.btn-send, .btn-send:hover {
+  background: none repeat scroll 0 0 #00a8b3;
+  color: #fff;
+}
+
+/* line 246, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.btn-send:hover {
+  background: none repeat scroll 0 0 #009da7;
+}
+
+/* line 249, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.modal-header h4.modal-title {
+  font-family: "Open Sans",sans-serif;
+  font-weight: 300;
+}
+
+/* line 253, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.modal-body label {
+  font-family: "Open Sans",sans-serif;
+  font-weight: 400;
+}
+
+/* line 257, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.heading-inbox h4 {
+  border-bottom: 1px solid #ddd;
+  color: #444;
+  font-size: 18px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* line 264, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.sender-info {
+  margin-bottom: 20px;
+}
+
+/* line 267, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.sender-info img {
+  height: 30px;
+  width: 30px;
+}
+
+/* line 271, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.sender-dropdown {
+  background: none repeat scroll 0 0 #eaeaea;
+  color: #777;
+  font-size: 10px;
+  padding: 0 3px;
+}
+
+/* line 277, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.view-mail a {
+  color: #ff6c60;
+}
+
+/* line 280, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail {
+  margin-top: 30px;
+}
+
+/* line 283, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail ul {
+  display: inline-block;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* line 288, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail ul li {
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 150px;
+}
+
+/* line 294, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail ul li img {
+  width: 100%;
+}
+
+/* line 297, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail ul li span {
+  float: right;
+}
+
+/* line 300, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail .file-name {
+  float: left;
+}
+
+/* line 303, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.attachment-mail .links {
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 308, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.fileinput-button {
+  float: left;
+  margin-right: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 314, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.fileinput-button input {
+  cursor: pointer;
+  direction: ltr;
+  font-size: 23px;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(-300px, 0px) scale(4);
+          transform: translate(-300px, 0px) scale(4);
+}
+
+/* line 325, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.fileupload-buttonbar .btn, .fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+
+/* line 328, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.files .progress {
+  width: 200px;
+}
+
+/* line 331, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+.fileupload-processing .fileupload-loading {
+  display: block;
+}
+
+/* line 334, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+* html .fileinput-button {
+  line-height: 24px;
+  margin: 1px -3px 0 0;
+}
+
+/* line 338, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+* + html .fileinput-button {
+  margin: 1px 0 0;
+  padding: 2px 15px;
+}
+
+@media (max-width: 767px) {
+  /* line 343, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+  .files .btn span {
+    display: none;
+  }
+
+  /* line 346, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+  .files .preview * {
+    width: 40px;
+  }
+
+  /* line 349, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+  .files .name * {
+    display: inline-block;
+    width: 80px;
+    word-wrap: break-word;
+  }
+
+  /* line 354, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+  .files .progress {
+    width: 20px;
+  }
+
+  /* line 357, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+  .files .delete {
+    width: 60px;
+  }
+}
+/* line 361, /Users/sondang/Projects/Ruby/Coderschool/CoderChat/app/assets/stylesheets/messages.scss */
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
