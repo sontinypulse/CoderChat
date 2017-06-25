@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/sent' => 'messages#sent_messages'
+  get 'messages/view_sent' => 'messages#view_sent'
   resources :messages
   get 'index' => 'home#index'
   get 'users/check_email' => 'users#check_email'

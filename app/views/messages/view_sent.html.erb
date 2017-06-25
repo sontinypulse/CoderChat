@@ -1,0 +1,9 @@
+
+<%= link_to 'Back', url_for(:back), class: 'form-control' %>
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title"><%= @message.recipent %></h4>
+    <p class="card-text"><%= @message.subject %></p>
+    <p class="card-text"><%= @message.body %></p>
+    <p class="card-text"><%= @message.created_at %></p>
+  </div>

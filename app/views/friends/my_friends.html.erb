@@ -104,57 +104,217 @@ ul.c-controls li a:hover {
 
 .btn-glyphicon { padding:2px; background:#ffffff; margin-right:4px; }
 .icon-btn { padding: 2px 12px 2px 2px; border-radius:30px;}
+/** The Magic **/
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+/** The Spacing **/
+.btn-breadcrumb .btn {
+  padding:6px 12px 6px 24px;
+}
+.btn-breadcrumb .btn:first-child {
+  padding:6px 6px 6px 10px;
+}
+.btn-breadcrumb .btn:last-child {
+  padding:6px 18px 6px 24px;
+}
+
+/** Default button **/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 10px solid #fff;
+}
+.btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 10px solid #ccc;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #ebebeb;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 10px solid #adadad;
+}
+
+/** Primary button **/
+.btn-breadcrumb .btn.btn-primary:not(:last-child):after {
+  border-left: 10px solid #428bca;
+}
+.btn-breadcrumb .btn.btn-primary:not(:last-child):before {
+  border-left: 10px solid #357ebd;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):after {
+  border-left: 10px solid #3276b1;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):before {
+  border-left: 10px solid #285e8e;
+}
+
+/** Success button **/
+.btn-breadcrumb .btn.btn-success:not(:last-child):after {
+  border-left: 10px solid #5cb85c;
+}
+.btn-breadcrumb .btn.btn-success:not(:last-child):before {
+  border-left: 10px solid #4cae4c;
+}
+.btn-breadcrumb .btn.btn-success:hover:not(:last-child):after {
+  border-left: 10px solid #47a447;
+}
+.btn-breadcrumb .btn.btn-success:hover:not(:last-child):before {
+  border-left: 10px solid #398439;
+}
+
+/** Danger button **/
+.btn-breadcrumb .btn.btn-danger:not(:last-child):after {
+  border-left: 10px solid #d9534f;
+}
+.btn-breadcrumb .btn.btn-danger:not(:last-child):before {
+  border-left: 10px solid #d43f3a;
+}
+.btn-breadcrumb .btn.btn-danger:hover:not(:last-child):after {
+  border-left: 10px solid #d2322d;
+}
+.btn-breadcrumb .btn.btn-danger:hover:not(:last-child):before {
+  border-left: 10px solid #ac2925;
+}
+
+/** Warning button **/
+.btn-breadcrumb .btn.btn-warning:not(:last-child):after {
+  border-left: 10px solid #f0ad4e;
+}
+.btn-breadcrumb .btn.btn-warning:not(:last-child):before {
+  border-left: 10px solid #eea236;
+}
+.btn-breadcrumb .btn.btn-warning:hover:not(:last-child):after {
+  border-left: 10px solid #ed9c28;
+}
+.btn-breadcrumb .btn.btn-warning:hover:not(:last-child):before {
+  border-left: 10px solid #d58512;
+}
+
+/** Info button **/
+.btn-breadcrumb .btn.btn-info:not(:last-child):after {
+  border-left: 10px solid #5bc0de;
+}
+.btn-breadcrumb .btn.btn-info:not(:last-child):before {
+  border-left: 10px solid #46b8da;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):after {
+  border-left: 10px solid #39b3d7;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):before {
+  border-left: 10px solid #269abc;
+}
 </style>
 
 <script>
-$(function () {
-    /* BOOTSNIPP FULLSCREEN FIX */
-    if (window.location == window.parent.location) {
-        $('#back-to-bootsnipp').removeClass('hide');
-    }
+$(document).ready(function () {
+  $('#NewMessage').on('show.bs.modal', function (event) {
 
-
-    $('[data-toggle="tooltip"]').tooltip();
-
-    $('#fullscreen').on('click', function(event) {
-        event.preventDefault();
-        window.parent.location = "http://bootsnipp.com/iframe/4l0k2";
-    });
-    $('a[href="#cant-do-all-the-work-for-you"]').on('click', function(event) {
-        event.preventDefault();
-        $('#cant-do-all-the-work-for-you').modal('show');
-    })
-
-    $('[data-command="toggle-search"]').on('click', function(event) {
-        event.preventDefault();
-        $(this).toggleClass('hide-search');
-
-        if ($(this).hasClass('hide-search')) {
-            $('.c-search').closest('.row').slideUp(100);
-        }else{
-            $('.c-search').closest('.row').slideDown(100);
-        }
-    })
-
-    $('#contact-list').searchable({
-        searchField: '#contact-list-search',
-        selector: 'li',
-        childSelector: '.col-xs-12',
-        show: function( elem ) {
-            elem.slideDown(100);
-        },
-        hide: function( elem ) {
-            elem.slideUp( 100 );
-        }
-    })
+    var link = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = link.data('whatever') // Extract info from data-* attributes
+    $("#email").val(recipient);
+    $("#email_hidden").val(recipient);
+  })
 });
+//triggered when modal is about to be shown
 
 </script>
-<div class = "container">
-  Get back to Inbox
-</div>
+<br/>
 <div class="container">
+  <div class="row">
+      <div class="btn-group btn-breadcrumb">
+        <a href="<%= messages_path %>" class="btn btn-primary"><i class="glyphicon glyphicon-home">Inbox</i></a>
+        <a href="<%= friends_list_path %>" class="btn btn-info">Add Friends</a>
+        <a href="<%= friends_myfriends_path %>" class="btn btn-success">My Friends</a>
+        <a href="<%= friends_myfriends_path %>?type=sent" class="btn btn-warning">Friends Sent</a>
+        <a href="<%= friends_myfriends_path%>?type=requested" class="btn btn-danger">Incoming Friends</a>
+      </div>
+  </div>
+</div>
+<br/>
 
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="NewMessage" class="modal fade" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button" tabindex="1">×</button>
+                <h4 class="modal-title">New Message</h4>
+            </div>
+            <div class="modal-body">
+              <%= form_tag(messages_path, :method => "post", id: "new-message-form", :class => 'form-horizontal' ) do %>
+              <div class="form-group">
+                  <label class="col-lg-2 control-label">To</label>
+                  <div class="col-lg-10">
+                      <%= hidden_field_tag :email_hidden %>
+                      <%= text_field_tag :email, params[:email], class: "form-control", :disabled => true, id: 'email', tabindex: 2 %>
+                  </div>
+              </div>
+              <!--
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Cc / Bcc</label>
+                    <div class="col-lg-10">
+                        <input type="text" placeholder="" id="cc" class="form-control">
+                    </div>
+                </div>
+            -->
+              <div class="form-group">
+                  <label class="col-lg-2 control-label">Subject</label>
+                  <div class="col-lg-10">
+                      <%= text_field_tag :subject, params[:subject], class: "form-control", tabindex: 3 %>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-lg-2 control-label">Message</label>
+                  <div class="col-lg-10">
+                    <%= text_area_tag :body, params[:body], rows: 10, cols: 30, class: "form-control", tabindex: 4 %>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="col-lg-offset-2 col-lg-10">
+                    <!--
+                      <span class="btn green fileinput-button">
+                        <i class="fa fa-plus fa fa-white"></i>
+                        <span>Attachment</span>
+                        <input type="file" name="files[]" multiple="">
+                      </span>
+                    -->
+                      <%= submit_tag "Send", class: "btn btn-send", tabindex: 5 %>
+                  </div>
+              </div>
+
+              <% end %>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <% @users.each.with_index do |user, index| %>
   <% if index.even? %>
     <div class="row">
@@ -171,8 +331,13 @@ $(function () {
                  <% if current_user.friend_status_with(user.id) == 0 %>
                   <span class="visible-xs"> <span class="text-muted">Waiting for accept</span><br/></span>
                  <% else %>
-                  <%= link_to "Send Message", friends_add_path(friend_id: user.id),:method=> :post, class: "btn icon-btn btn-success" %>
-
+                  <% if current_user.friend_status_with(user.id) == 1%>
+                    <%= link_to "Accept Friend Request", friends_accept_path(friend_id: user.id),:method=> :post, class: "btn icon-btn btn-success" %>
+                  <% else %>
+                  <a href="#NewMessage" data-toggle="modal"  title="Compose" data-whatever="<%=user.email%>" class="btn icon-btn btn-success" id="<%=user.id%>">
+                      Send Message
+                  </a>
+                  <% end %>
                  <% end %>
              </div>
              <div class="clearfix"></div>
@@ -192,8 +357,13 @@ $(function () {
                 <% if current_user.friend_status_with(user.id) == 0 %>
                  <span class="visible-xs"> <span class="text-muted">Waiting for accept</span><br/></span>
                 <% else %>
-                 <%= link_to "Send Message", friends_add_path(friend_id: user.id),:method=> :post, class: "btn icon-btn btn-success" %>
-
+                 <% if current_user.friend_status_with(user.id) == 1%>
+                   <%= link_to "Accept Friend Request", friends_accept_path(friend_id: user.id),:method=> :post, class: "btn icon-btn btn-success" %>
+                 <% else %>
+                 <a href="#NewMessage" data-toggle="modal"  title="Compose" data-whatever="<%=user.email%>"  class="btn icon-btn btn-success" id="<%=user.id%>">
+                     Send Message
+                 </a>
+                 <% end %>
                 <% end %>
             </div>
             <div class="clearfix"></div>

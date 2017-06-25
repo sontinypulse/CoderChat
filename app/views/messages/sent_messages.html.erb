@@ -58,18 +58,13 @@
  <table class="table table-inbox table-hover">
    <tbody>
      <% @messages.each do |message| %>
-     <% if message.read_at.nil?%>
-      <tr class="unread">
-     <% else %>
-      <tr class="read">
-     <% end %>
-
+     <tr class="unread">
          <td class="inbox-small-cells">
              <input type="checkbox" class="mail-checkbox">
          </td>
          <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-         <td class="view-message  dont-show"><%= message.sender %></td>
-         <td class="view-message"><%= link_to message.subject, message_path(message.id)  %></td>
+         <td class="view-message  dont-show"><%= message.recipent %></td>
+         <td class="view-message "><%= link_to message.subject, messages_view_sent_path(id: message.id)  %></td>
          <td class="view-message  text-right"><%= message.created_at.strftime("%A %H:%M") %></td>
      </tr>
      <% end %>

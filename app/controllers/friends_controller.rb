@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   def list
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
   end
 
   def add
@@ -23,10 +23,18 @@ class FriendsController < ApplicationController
     else
       flash[:notice] = "Could not accept the friend request now"
     end
-    redirect_to friends_list_path
+    redirect_to friends_myfriends_path
   end
 
   def my_friends
-    @users = current_user.friends + current_user.inverse_friends
+    if 'sent'.eql?(params[:type])
+      @users = current_user.sent_friends
+    else
+      if ('requested'.eql?(params[:type]))
+        @users = current_user.requested_friends
+      else
+        @users = current_user.my_friends
+      end
+    end
   end
 end

@@ -3,6 +3,14 @@ class MessagesController < ApplicationController
     @messages = current_user.received_messages
   end
 
+  def sent_messages
+    @messages = current_user.sent_messages
+  end
+
+  def view_sent
+    @message = Message.find_by_id(params[:id])
+  end
+
   def show
     @message = Message.find_by_id(params[:id])
 
@@ -15,13 +23,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    receiver = User.find_by_email(params[:email])
+    email = params[:email] || params[:email_hidden]
+    receiver = User.find_by_email(email)
     message = Message.new
     message.subject = params[:subject]
     message.body = params[:body]
     message.sender_id = current_user.id
     message.recipent_id = receiver.id
     message.save!
-    redirect_to root_path, flash: { notice: 'Message is sent successfully' }
+    redirect_to root_path, flash: { notice: "Message is sent successfully to #{receiver.first_name} #{receiver.last_name}" }
   end
 end

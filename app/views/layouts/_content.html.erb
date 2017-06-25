@@ -402,7 +402,8 @@ ul {
                                           <div class="form-group">
                                               <label class="col-lg-2 control-label">To</label>
                                               <div class="col-lg-10">
-                                                  <%= text_field_tag :email, params[:email], class: "form-control", tabindex: 2 %>
+                                                <%= select_tag :email, options_from_collection_for_select(current_user.my_friends, "email", "full_name"), class: "form-control", tabindex: 2  %>
+
                                               </div>
                                           </div>
                                           <!--
@@ -447,15 +448,31 @@ ul {
                             </div><!-- /.modal -->
                         </div>
                         <ul class="inbox-nav inbox-divider">
-                            <li class="active">
+                            <% if 'messages'.eql?(controller.controller_name) && 'index'.eql?(controller.action_name) %>
+                              <li class="active">
+                            <% else %>
+                              <li>
+                            <% end %>
                                 <a href="<%= messages_path %>"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right"><%= current_user.received_messages.count %></span></a>
 
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
+                            <% if 'messages'.eql?(controller.controller_name) && 'sent_messages'.eql?(controller.action_name) %>
+                              <li class="active">
+                            <% else %>
+                              <li>
+                            <% end %>
+                                <a href="<%= messages_sent_path %>"><i class="fa fa-envelope-o"></i> Sent Messages <span class="label label-danger pull-right"><%= current_user.sent_messages.count %></span></a>
                             </li>
                             <li>
-                                <a href="<%= friends_myfriends_path %>"><i class=" fa fa-external-link"></i> My Friends <span class="label label-info pull-right">1</span></a>
+                                <a href="<%= friends_myfriends_path %>"><i class=" fa fa-external-link"></i> My Friends <span class="label label-info pull-right"><%= current_user.my_friends.count %></span></a>
+                            </li>
+
+                            <li>
+                                <a href="<%= friends_myfriends_path %>?type=sent"><i class=" fa fa-external-link"></i> Friends Sent <span class="label label-info pull-right"><%= current_user.sent_friends.count %></span></a>
+                            </li>
+
+                            <li>
+                                <a href="<%= friends_myfriends_path %>?type=requested"><i class=" fa fa-external-link"></i> Incoming Friends <span class="label label-info pull-right"><%= current_user.requested_friends.count %></span></a>
                             </li>
                         </ul>
 
@@ -472,7 +489,12 @@ ul {
                     </aside>
                     <aside class="lg-side">
                         <div class="inbox-head">
+                          <% if 'messages'.eql?(controller.controller_name) && 'index'.eql?(controller.action_name) %>
                             <h3>Inbox</h3>
+                          <% else %>
+                            <h3>Sent Messages</h3>
+                          <% end %>
+
                             <form action="#" class="pull-right position">
                                 <div class="input-append">
                                     <input type="text" class="sr-input" placeholder="Search Messages">
